@@ -16,13 +16,15 @@ public class App
 	static Logger logger = LoggerFactory.getLogger(App.class);
     public static void main( String[] args ) throws ClientProtocolException, IOException, InterruptedException
     {
+    	SendMail sm = new SendMail();
     	System.out.println(new Date());
-    	GetService a = new GetService();
-    	a.getToken();
-    	LoopCheckService lcs = new LoopCheckService(a);
-    	Thread t = new Thread(lcs);
-    	t.start();
-    	logger.info("Out main");
+    	sm.sendMail("thedangbka@gmail.com", "Helloworld");
+//    	GetService a = new GetService();
+//    	a.getToken();
+//    	LoopCheckService lcs = new LoopCheckService(a);
+//    	Thread t = new Thread(lcs);
+//    	t.start();
+//    	logger.info("Out main");
     }
     
    
